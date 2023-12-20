@@ -1,0 +1,5 @@
+# Global
+projects/**/coverage/
+
+# Project
+projects/amm/

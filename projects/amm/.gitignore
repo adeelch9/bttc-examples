@@ -1,0 +1,11 @@
+node_modules
+build
+.openzeppelin/unknown-*.json
+package-lock.json
+ref
+flatten
+.DS_Store
+bin
+contracts/CCSourceV2.sol
+.idea/*
+
