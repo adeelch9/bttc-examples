@@ -22,8 +22,7 @@ npx hardhat run ./scripts/deploy.js
 After deployment the output of the script will be the addresses of the contracts  
 
 ```
-Contract deployed to address:  0x5FbDB2315678afecb367f032d93F642f64180aa3
-Greeting function says  Hello World!
+Multisig wallet deployed at 0x5FbDB2315678afecb367f032d93F642f64180aa3
 ```
 
 # Contract Testing
