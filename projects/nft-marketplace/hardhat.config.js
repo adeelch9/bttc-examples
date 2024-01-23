@@ -1,5 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
-
+require('dotenv').config();
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
@@ -9,6 +9,18 @@ module.exports = {
         enabled: true,
         runs: 1000,
       },
+    },
+  },
+  networks: {
+    bttc_testnet: {
+      url: "https://pre-rpc.bt.io/",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 1029,
+    },
+    bttc_mainnet: {
+      url: "https://rpc.bt.io/",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 199,
     },
   },
   allowUnlimitedContractSize: true,

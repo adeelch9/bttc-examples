@@ -2,17 +2,12 @@ const hre = require("hardhat");
 
 async function main() {
   const simpleERC20 = await hre.ethers.getContractFactory("SimpleERC20");
+
   const tokenName = "Simple ERC20";
   const tokenSymbol = "SERC20";
-  const totalSupply = 1000000;
-  const simpleERC20Contract = await simpleERC20.deploy(tokenName, tokenSymbol, totalSupply);
-  let name = await simpleERC20Contract.name();
-  let symbol = await simpleERC20Contract.symbol();
-  let balance = await simpleERC20Contract.balanceOf(simpleERC20Contract.runner.address);
-  console.log("Name: ", name);
-  console.log("Symbol: ", symbol);
-  console.log("Balance: ", balance.toString());
-
+  const totalSupply = 1000000 * math.pow(10, 18);
+  const simpleERC20ContractDeployed = await simpleERC20.deploy(tokenName, tokenSymbol, totalSupply);
+  console.log("ERC20 deployed to address: ", simpleERC20ContractDeployed.target);
 }
 main().catch((error) => {
   console.error(error);
