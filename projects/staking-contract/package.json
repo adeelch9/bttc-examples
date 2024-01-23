@@ -1,5 +1,9 @@
 {
   "name": "staking-example",
+  "scripts": {
+    "deploy:testnet": "npx hardhat clean && npx npx hardhat run ./scripts/deploy.js --network bttc_testnet",
+    "deploy": "npx hardhat clean && npx npx hardhat run ./scripts/deploy.js"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
@@ -19,6 +23,7 @@
     "@openzeppelin/contracts": "^5.0.1",
     "@openzeppelin/test-helpers": "^0.5.16",
     "@uniswap/lib": "^4.0.1-alpha",
-    "@uniswap/v2-core": "^1.0.1"
+    "@uniswap/v2-core": "^1.0.1",
+    "dotenv": "^16.3.2"
   }
 }

@@ -4,27 +4,32 @@
 -   [Nodejs](https://nodejs.org/en) v18.19.0 or higher
 
 
-# Install Hardhat  
-```shell
-npm install --save-dev hardhat
-```
-
 # Install packages   
 ```shell
 npm install 
 ```
-# Contract Deployment  
+# Deployment  
 
-Run the following command to compile and deploy the contracts
+Copy ".env.example" file content and create a .env file for managing the private key of the deployer.
+Add deployer's wallet's private key eg 
 ```shell
-npx hardhat run ./scripts/deploy.js
+PRIVATE_KEY=YOUR_WALLET_PRIVATE_KEY
 ```
+Run the following command to compile and deploy the contracts on local hardhat network
+```shell
+npm run deploy
+```
+
+Run the following command to compile and deploy the contracts on bttc testnet network
+```shell
+npm run deploy:testnet
+```
+Testnet configuration is added in "hardhat.config.js" file
+
 After deployment the output of the script will be the addresses of the contracts  
 
 ```
-Name:  Simple ERC20
-Symbol:  SERC20
-Balance:  1000000
+ERC20 deployed to address:  0x1Df8E8c4392908c1ae32520657E66617f2CC148b
 ```
 
 # Contract Testing

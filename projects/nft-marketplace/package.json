@@ -1,5 +1,9 @@
 {
   "name": "nft-marketplace-example",
+  "scripts": {
+    "deploy:testnet": "npx hardhat clean && npx npx hardhat run ./scripts/deploy.js --network bttc_testnet",
+    "deploy": "npx hardhat clean && npx npx hardhat run ./scripts/deploy.js"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
@@ -21,6 +25,8 @@
     "@uniswap/lib": "^4.0.1-alpha",
     "@uniswap/v2-core": "^1.0.1",
     "i": "^0.3.7",
-    "npm": "^10.2.5"
+    "npm": "^10.2.5",
+    "dotenv": "^16.3.2"
+
   }
 }
