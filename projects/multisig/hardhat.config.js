@@ -18,6 +18,12 @@ module.exports = {
       chainId: 1029,
       timeout: 100_000
     },
+    bttc_mainnet: {
+      url: "https://rpc.bt.io/",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 199,
+      timeout: 100_000
+    },
   },
   allowUnlimitedContractSize: true,
 }

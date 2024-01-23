@@ -17,6 +17,11 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY],
       chainId: 1029,
     },
+    bttc_mainnet: {
+      url: "https://rpc.bt.io/",
+      accounts: [process.env.PRIVATE_KEY],
+      chainId: 199,
+    },
   },
   allowUnlimitedContractSize: true,
 }
