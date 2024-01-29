@@ -16,10 +16,3 @@ This repo contains example projects for BTTC. It is divided in independent proje
 | [DAO](./projects/dao)                         | Decentralize Autonomous Organization Contract example. | 0.8.4               |
 | [Staking](./projects/staking-contract)        | Simple Staking Contract example.                       | 0.8.4                  |
 | [NFT Marketplace](./projects/nft-marketplace) | Basic NFT marketplace contract example.                | 0.8.4               |
-
-## Create a new project
-
-1 - Create a new folder inside `projects` <br/>
-2 - Run `yarn init`
-
-Commands inside the root `package.json` starting with `lerna` will run the corresponding command in each subproject.
