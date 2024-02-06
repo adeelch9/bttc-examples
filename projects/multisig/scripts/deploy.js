@@ -11,8 +11,29 @@ async function main() {
     owners.length
   );
   console.log("Multisig wallet deployed at", multiSigWalletContract.target);
+
+    if (hre.network.name === "hardhat") {
+        return;
+    }
+    console.info("Waiting For Explorer to Sync Contract (10s)...")
+    await wait(10)
+
+    try {
+        await hre.run("verify:verify", {
+            address: multiSigWalletContract.target,
+            contract: "contracts/MultiSigWallet.sol:MultiSigWallet",
+            constructorArguments: [owners,owners.length],
+        });
+    } catch (error) {
+        console.log("Verification Failed.: ", error);
+    }
 }
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+
+async function wait(timeInSeconds) {
+    await new Promise((r) => setTimeout(r, timeInSeconds * 1000));
+}

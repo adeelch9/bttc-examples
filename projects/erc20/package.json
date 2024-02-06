@@ -3,7 +3,8 @@
   "scripts": {
     "deploy:testnet": "npx hardhat clean && npx hardhat run ./scripts/deploy.js --network bttc_testnet",
     "deploy": "npx hardhat clean && npx hardhat run ./scripts/deploy.js",
-    "test": "npx hardhat test"
+    "test": "npx hardhat test",
+    "coverage": "npx hardhat coverage"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.2",
