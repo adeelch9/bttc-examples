@@ -17,6 +17,27 @@ async function main() {
 
   console.log("TokenTimeLock deployed to:", tokenTimeLock.target);
 
+    if (hre.network.name === "hardhat") {
+        return;
+    }
+    console.info("Waiting For Explorer to Sync Contract (10s)...")
+    await wait(10)
+
+    try {
+        await hre.run("verify:verify", {
+            address: erc20Token.target,
+            contract: "contracts/SimpleERC20.sol:SimpleERC20",
+            constructorArguments: [tokenName, tokenSymbol, tokenSupply],
+        });
+
+        await hre.run("verify:verify", {
+            address: tokenTimeLock.target,
+            contract: "contracts/TokenTimeLock.sol:TokenTimeLock",
+            constructorArguments: [erc20Token.target,erc20Token.runner.address,releaseTime],
+        });
+    } catch (error) {
+        console.log("Verification Failed.: ", error);
+    }
 }
 
 
@@ -24,3 +45,7 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+async function wait(timeInSeconds) {
+    await new Promise((r) => setTimeout(r, timeInSeconds * 1000));
+}

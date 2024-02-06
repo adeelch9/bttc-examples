@@ -25,5 +25,20 @@ module.exports = {
       timeout: 100_000
     },
   },
-  allowUnlimitedContractSize: true,
+    etherscan: {
+        apiKey: {
+            bttc_testnet: '5ITUQA681SDC1Z79KBQDXJQUSVNXG3WSMN'
+        },
+        customChains: [
+            {
+                network: "bttc_testnet",
+                chainId: 1029,
+                urls: {
+                    apiURL: "https://api-testnet.bttcscan.com/api",
+                    browserURL: "https://testnet.bttcscan.com"
+                }
+            }
+        ]
+    },
+    allowUnlimitedContractSize: true,
 }
